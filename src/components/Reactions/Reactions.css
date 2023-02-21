@@ -1,0 +1,20 @@
+.reactions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+.clap img,
+.heart img {
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+.clap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.count {
+  font-size: large;
+}
