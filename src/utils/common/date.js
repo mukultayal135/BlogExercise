@@ -20,3 +20,17 @@ export const getFormattedDateFromUtcDate = (utcDate) => {
       ${monthNames[date.getMonth()]}, 
       ${date.getFullYear()}`;
 };
+
+export const getBlogIndexById = (allBlogData, id) => {
+  return allBlogData.findIndex((eachBlog) => eachBlog.id === id);
+};
+export const updateBlogData = (
+  updatedBlogData,
+  allBlogData,
+  setAllBlogData
+) => {
+  const blogIndex = getBlogIndexById(allBlogData, updatedBlogData.id);
+  const updatedBlogDataArray = [...allBlogData];
+  updatedBlogDataArray[blogIndex] = updatedBlogData;
+  setAllBlogData(updatedBlogDataArray);
+};

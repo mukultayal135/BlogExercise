@@ -1,22 +1,32 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import React, { useContext } from 'react';
 import Img from '../Img';
+import { BlogPostContext } from '../../contexts/BlogPostContext';
 import PostContent from '../PostContent';
 import Reactions from '../Reactions';
 import './Card.css';
 import { UPDATE_BLOG_DATA } from '../../constants/apiEndPoints';
-import { getFormattedDateFromUtcDate } from '../../utils/common/date';
+import {
+  updateBlogData,
+  getFormattedDateFromUtcDate,
+} from '../../utils/common/date';
 import makeRequest from '../../utils/makeRequest';
 
 const Card = ({ blogData }) => {
-  const [claps, setClaps] = useState(blogData.claps);
-  const [like, setLike] = useState(blogData.liked);
+  const { allBlogData, setAllBlogData } = useContext(BlogPostContext);
   const onReact = async () => {
     try {
       await makeRequest(UPDATE_BLOG_DATA(blogData.id), () => {}, {
-        data: { claps: claps + 1 },
+        data: { claps: blogData.claps + 1 },
       });
-      setClaps(claps + 1);
+      updateBlogData(
+        {
+          ...blogData,
+          claps: blogData.claps + 1,
+        },
+        allBlogData,
+        setAllBlogData
+      );
     } catch (e) {
       //
     }
@@ -24,9 +34,16 @@ const Card = ({ blogData }) => {
   const onLike = async () => {
     try {
       await makeRequest(UPDATE_BLOG_DATA(blogData.id), () => {}, {
-        data: { liked: !like },
+        data: { liked: !blogData.liked },
       });
-      setLike(!like);
+      updateBlogData(
+        {
+          ...blogData,
+          liked: !blogData.liked,
+        },
+        allBlogData,
+        setAllBlogData
+      );
     } catch (e) {
       //
     }
@@ -40,7 +57,12 @@ const Card = ({ blogData }) => {
         readingTime={blogData.reading_time}
         date={getFormattedDateFromUtcDate(blogData.date)}
       />
-      <Reactions onReact={onReact} count={claps} onLike={onLike} liked={like} />
+      <Reactions
+        onReact={onReact}
+        count={blogData.claps}
+        onLike={onLike}
+        liked={blogData.liked}
+      />
     </div>
   );
 };

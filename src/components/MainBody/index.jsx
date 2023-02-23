@@ -1,25 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Card from '../Card';
 import './MainBody.css';
 import { GET_BLOG_DATA } from '../../constants/apiEndPoints';
 import makeRequest from '../../utils/makeRequest';
+import { BlogPostContext } from '../../contexts/BlogPostContext';
 
 const MainBody = () => {
-  const [blogData, setBlogData] = useState();
+  const { allBlogData, setAllBlogData } = useContext(BlogPostContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     makeRequest(GET_BLOG_DATA, navigate).then((response) => {
-      setBlogData(response);
+      setAllBlogData(response);
     });
   }, []);
 
   return (
     <main>
-      {blogData ? (
+      {allBlogData ? (
         <div className="cards-container page-padding">
-          {blogData.map((eachBlog) => (
+          {allBlogData.map((eachBlog) => (
             <Card key={eachBlog.id} blogData={eachBlog} />
           ))}
         </div>
