@@ -1,6 +1,8 @@
 header {
+  box-sizing: border-box;
   padding-bottom: 0px;
   display: flex;
+  width: 100%;
   flex-direction: column;
   background-color: black;
   color: white;

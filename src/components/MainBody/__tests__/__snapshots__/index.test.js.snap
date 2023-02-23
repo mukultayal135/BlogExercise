@@ -1,0 +1,150 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainBody should show loading text when data is still loading 1`] = `
+<DocumentFragment>
+  <main>
+    <div
+      class="cards-container page-padding"
+    >
+      <div
+        class="card"
+        data-testid="card"
+      >
+        <div>
+          <img
+            alt=""
+            class="card-image"
+            src="abstract.png"
+          />
+        </div>
+        <div
+          class="card-content card-padding"
+        >
+          <div
+            class="date-time"
+          >
+            <div
+              class="date"
+            >
+              29th
+      June, 
+      2021
+            </div>
+            <div
+              class="read-time"
+            >
+              2 mins
+            </div>
+          </div>
+          <div
+            class="card-heading"
+          >
+            mock title 1
+          </div>
+          <div
+            class="card-description"
+          >
+            mock description 1
+          </div>
+        </div>
+        <hr />
+        <div
+          class="reactions"
+        >
+          <div
+            class="clap"
+          >
+            <img
+              alt="clapImage"
+              src="clapping.svg"
+            />
+            <div
+              class="count"
+              data-testid="count-clap"
+            >
+              10
+            </div>
+          </div>
+          <div
+            class="heart"
+          >
+            <img
+              alt="heartImg"
+              src="heart-black.svg"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="card"
+        data-testid="card"
+      >
+        <div>
+          <img
+            alt=""
+            class="card-image"
+            src="abstract.png"
+          />
+        </div>
+        <div
+          class="card-content card-padding"
+        >
+          <div
+            class="date-time"
+          >
+            <div
+              class="date"
+            >
+              29th
+      June, 
+      2022
+            </div>
+            <div
+              class="read-time"
+            >
+              4 mins
+            </div>
+          </div>
+          <div
+            class="card-heading"
+          >
+            mock title 2
+          </div>
+          <div
+            class="card-description"
+          >
+            mock description 2
+          </div>
+        </div>
+        <hr />
+        <div
+          class="reactions"
+        >
+          <div
+            class="clap"
+          >
+            <img
+              alt="clapImage"
+              src="clapping.svg"
+            />
+            <div
+              class="count"
+              data-testid="count-clap"
+            >
+              12
+            </div>
+          </div>
+          <div
+            class="heart"
+          >
+            <img
+              alt="heartImg"
+              src="heart-red.svg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</DocumentFragment>
+`;

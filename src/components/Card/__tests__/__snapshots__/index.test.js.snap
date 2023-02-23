@@ -22,23 +22,25 @@ exports[`Card should render Card component 1`] = `
         <div
           class="date"
         >
-          2nd Januray, 2018
+          29th
+      June, 
+      2022
         </div>
         <div
           class="read-time"
         >
-          2 mins
+          4 mins
         </div>
       </div>
       <div
         class="card-heading"
       >
-        The future of abstract art and the culture ...
+        mock title 2
       </div>
       <div
         class="card-description"
       >
-        Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your...
+        mock description 2
       </div>
     </div>
     <hr />
@@ -56,7 +58,7 @@ exports[`Card should render Card component 1`] = `
           class="count"
           data-testid="count-clap"
         >
-          10
+          12
         </div>
       </div>
       <div

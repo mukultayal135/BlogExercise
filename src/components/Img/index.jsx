@@ -1,6 +1,3 @@
-/* eslint-disable global-require */
-/* eslint-disable import/no-dynamic-require */
-
 import React from 'react';
 import { PropTypes } from 'prop-types';
 import './Img.css';
@@ -8,11 +5,7 @@ import './Img.css';
 const Img = ({ path }) => {
   return (
     <div>
-      <img
-        className="card-image"
-        src={require(`../../assets/Images/${path}`)}
-        alt=""
-      />
+      <img className="card-image" src={path} alt="" />
     </div>
   );
 };
